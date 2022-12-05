@@ -69,6 +69,7 @@ layout fragment_chats
 layout fragment_profile
 layout fragment_users
 layout layoutofusers
+menu main_menu
 menu menu
 mipmap ic_launcher
 mipmap ic_launcher_round
@@ -80,7 +81,10 @@ string google_app_id
 string google_crash_reporting_api_key
 string google_storage_bucket
 string hello_blank_fragment
+string log_out
+string out_mess
 string project_id
+string signout
 style AppTheming
 style MenuStyle
 style Theme.Chatapp

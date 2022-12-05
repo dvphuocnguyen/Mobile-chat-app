@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/Users/TechCare/Desktop/Chatapp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.184" />
         <entry key="..\:/Users/TechCare/Desktop/Chatapp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.184" />
+        <entry key="..\:/Users/TechCare/Desktop/Chatapp/app/src/main/res/layout-v31/activity_login.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/TechCare/Desktop/Chatapp/app/src/main/res/layout/activity_login.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/TechCare/Desktop/Chatapp/app/src/main/res/layout/activity_main.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/TechCare/Desktop/Chatapp/app/src/main/res/layout/activity_message.xml" value="0.17552083333333332" />
@@ -17,6 +18,7 @@
         <entry key="..\:/Users/TechCare/Desktop/Chatapp/app/src/main/res/layout/fragment_profile.xml" value="0.1" />
         <entry key="..\:/Users/TechCare/Desktop/Chatapp/app/src/main/res/layout/fragment_users.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/TechCare/Desktop/Chatapp/app/src/main/res/layout/layoutofusers.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/TechCare/Desktop/Chatapp/app/src/main/res/menu/main_menu.xml" value="0.1" />
         <entry key="..\:/Users/TechCare/Desktop/Chatapp/app/src/main/res/menu/menu.xml" value="0.1" />
       </map>
     </option>

@@ -32,9 +32,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-//import com.google.firebase.storage.FirebaseStorage;
-//import com.google.firebase.storage.StorageReference;
-//import com.google.firebase.storage.UploadTask;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.MultiplePermissionsReport;
 import com.karumi.dexter.PermissionToken;
@@ -204,86 +204,86 @@ public class ProfileFragment extends Fragment {
     }
 
 
-//    @Override
-//    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-//        super.onActivityResult(requestCode, resultCode, data);
-//
-//
-//        if (requestCode == GALLERY_CODE && resultCode == RESULT_OK) {
-//
-//            imageUri = data.getData();
-//
-//            String filepath = "Photos/" + "userprofile_" + user.getUid();
-//
-//            //StorageReference reference = FirebaseStorage.getInstance().getReference(filepath);
-//            //reference.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-//                @Override
-//              //  public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-//
-//                    Task<Uri> task = taskSnapshot.getMetadata().getReference().getDownloadUrl();
-//
-//                    task.addOnSuccessListener(new OnSuccessListener<Uri>() {
-//                        @Override
-//                        public void onSuccess(Uri uri) {
-//
-//                            String imageURL = uri.toString();
-//
-//                            DatabaseReference reference1 = FirebaseDatabase.getInstance().getReference("Users").child(user.getUid());
-//
-//                            HashMap<String, Object> hashMap = new HashMap<>();
-//                            hashMap.put("imageURL", imageURL);
-//                            reference1.updateChildren(hashMap);
-//
-//
-//                        }
-//                    });
-//
-//
-//                }
-//            });
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+
+        if (requestCode == GALLERY_CODE && resultCode == RESULT_OK) {
+
+            imageUri = data.getData();
+
+            String filepath = "Photos/" + "userprofile_" + user.getUid();
+
+            StorageReference reference = FirebaseStorage.getInstance().getReference(filepath);
+            reference.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+
+                    Task<Uri> task = taskSnapshot.getMetadata().getReference().getDownloadUrl();
+
+                    task.addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+
+                            String imageURL = uri.toString();
+
+                            DatabaseReference reference1 = FirebaseDatabase.getInstance().getReference("Users").child(user.getUid());
+
+                            HashMap<String, Object> hashMap = new HashMap<>();
+                            hashMap.put("imageURL", imageURL);
+                            reference1.updateChildren(hashMap);
+
+
+                        }
+                    });
+
+
+                }
+            });
 
 
         }
 
 
 
-//        if (requestCode == CAMERA_CODE && resultCode == RESULT_OK) {
-//
-//            Uri uri = imageUri;
-//
-//            String filepath = "Photos/" + "userprofile_" + user.getUid();
-//
-//            StorageReference reference = FirebaseStorage.getInstance().getReference(filepath);
-//            reference.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-//                @Override
-//                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-//
-//                    Task<Uri> task = taskSnapshot.getMetadata().getReference().getDownloadUrl();
-//
-//                    task.addOnSuccessListener(new OnSuccessListener<Uri>() {
-//                        @Override
-//                        public void onSuccess(Uri uri) {
-//
-//                            String imageURL = uri.toString();
-//
-//                            DatabaseReference reference1 = FirebaseDatabase.getInstance().getReference("Users").child(user.getUid());
-//
-//                            HashMap<String, Object> hashMap = new HashMap<>();
-//                            hashMap.put("imageURL", imageURL);
-//                            reference1.updateChildren(hashMap);
-//
-//
-//                        }
-//                    });
-//
-//
-//                }
-//            });
+        if (requestCode == CAMERA_CODE && resultCode == RESULT_OK) {
+
+            Uri uri = imageUri;
+
+            String filepath = "Photos/" + "userprofile_" + user.getUid();
+
+            StorageReference reference = FirebaseStorage.getInstance().getReference(filepath);
+            reference.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+
+                    Task<Uri> task = taskSnapshot.getMetadata().getReference().getDownloadUrl();
+
+                    task.addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+
+                            String imageURL = uri.toString();
+
+                            DatabaseReference reference1 = FirebaseDatabase.getInstance().getReference("Users").child(user.getUid());
+
+                            HashMap<String, Object> hashMap = new HashMap<>();
+                            hashMap.put("imageURL", imageURL);
+                            reference1.updateChildren(hashMap);
 
 
-    //}
+                        }
+                    });
+
+
+                }
+            });
+
+
+    }
 
 
 
-   // }
-//}
+    }
+}
